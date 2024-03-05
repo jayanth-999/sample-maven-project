@@ -30,3 +30,17 @@ spec:
       volumes:
       - name: pgdata
         emptyDir: {}
+
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: java-db
+spec:
+  selector:
+    app: java-db
+  ports:
+  - protocol: TCP
+    port: 5432
+    targetPort: 5432
