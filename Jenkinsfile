@@ -10,6 +10,11 @@ pipeline {
                 echo "checking out the repo"
             }
         }
+         stage('Maven Build') {
+            steps {
+                MvnBuild()
+            }
+        }
        
     }
 }
